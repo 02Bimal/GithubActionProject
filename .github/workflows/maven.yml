@@ -31,6 +31,10 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
+      - name: Verify Sonar URL
+        run: |
+          echo "Using SonarQube URL"
+          echo "${{ secrets.SONAR_HOST_URL }}"
 
       - name: SonarQube Scan
         env:
