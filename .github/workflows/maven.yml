@@ -53,14 +53,12 @@ steps:
     with:
       name: myapp
       path: target/*.war
-```
 
 deploy:
 runs-on: [self-hosted, linux]
 needs: build
 environment: production
 
-```
 steps:
   # Download WAR Artifact
   - name: Download WAR artifact
@@ -77,4 +75,3 @@ steps:
       curl -u "${{ secrets.TOMCAT_USER }}:${{ secrets.TOMCAT_PASSWORD }}" \
            --upload-file "$WAR_FILE" \
            "http://${{ secrets.TOMCAT_HOST }}/manager/text/deploy?path=/myapp&update=true"
-```
