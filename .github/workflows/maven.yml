@@ -9,7 +9,6 @@ jobs:
 build:
 runs-on: [self-hosted, linux]
 
-```
 steps:
   # Checkout source code
   - name: Checkout code
