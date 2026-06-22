@@ -55,6 +55,7 @@ jobs:
   deploy:
     runs-on: [self-hosted, linux]
     needs: build
+    environment: production
 
     steps:
       - name: Download WAR artifact
