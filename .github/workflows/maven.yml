@@ -62,6 +62,11 @@ jobs:
         with:
           name: myapp
 
+      - name: Debug Tomcat Secrets
+        run: |
+          echo "HOST=${{ secrets.TOMCAT_HOST }}"
+          echo "USER=${{ secrets.TOMCAT_USER }}"
+
       - name: Deploy to Tomcat
         run: |
           WAR_FILE=$(ls *.war)
